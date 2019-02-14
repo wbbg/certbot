@@ -1,4 +1,4 @@
-FROM python:alpine
+FROM arm64v8/python:alpine
 
 ENTRYPOINT [ "certbot" ]
 EXPOSE 80 443
@@ -12,8 +12,7 @@ COPY certbot src/certbot
 
 RUN apk add --no-cache --virtual .certbot-deps \
         libffi \
-        libssl1.1 \
-        openssl \
+	openssl \
         ca-certificates \
         binutils
 RUN apk add --no-cache --virtual .build-deps \
