@@ -1,6 +1,6 @@
 FROM arm64v8/python:alpine
 
-COPY qemu-arm-static /usr/bin
+COPY qemu-aarch64-static /usr/bin
 
 ENTRYPOINT [ "certbot" ]
 EXPOSE 80 443
