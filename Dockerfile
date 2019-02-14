@@ -1,5 +1,7 @@
 FROM arm64v8/python:alpine
 
+COPY qemu-arm-static /usr/bin
+
 ENTRYPOINT [ "certbot" ]
 EXPOSE 80 443
 VOLUME /etc/letsencrypt /var/lib/letsencrypt
